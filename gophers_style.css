@@ -1,0 +1,484 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-size: 12px;
+  line-height: 1.2px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+
+html {
+  background-color: #000000;
+}
+
+body {
+  width: 465px;
+  height: 465px;
+  overflow: hidden;
+}
+
+/*遊戲背景*/
+#game {
+  position: relative;
+  background-image: url("images/background.png");
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  width: 319px;
+  height: 375px;
+  margin: 40px auto 0px auto;
+  overflow: hidden;
+}
+
+/*遊戲結束畫面*/
+#gameover {
+  background-image: url("images/gameover.png");
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  background-color: : rgb(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 319px;
+  height: 375px;
+  z-index: 20;
+  opacity: 1;
+  -webkit-animation-name: gameover;
+  -webkit-animation-function: linear;
+  -webkit-animation-duration: 13s;
+  -webkit-animation-delay: 0.5s;
+}
+
+/*動畫：遊戲結束畫面*/
+@-webkit-keyframes gameover {
+  0% {top: -465px; opacity: 1;}
+  97% {top: -465px; opacity: 0;}
+  100% {top: 0px; opacity: 1;}
+}
+
+/*計時器外框*/
+#timer {
+  background-image: url("images/timeboard.png");
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 310px;
+  left: 5px;
+  z-index: 10;
+  width: 309px;
+  height: 50px;
+}
+
+/*計時器*/
+#progress {
+  background-image: url("images/timeline.png");
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 7px;
+  left: 114px;
+  width: 170px;
+  height: 36px;
+  -webkit-animation-name: progress;
+  -webkit-timing-function: linear;
+  -webkit-animation-duration: 12.5s;
+  -webkit-animation-delay: 0.5s;
+}
+
+/*動畫：計時器*/
+@-webkit-keyframes progress {
+  0% {width: 0px;}
+  100% {width: 170px;}
+}
+
+/*土堆，用來遮住地鼠*/
+#mound {
+  position: absolute;
+  top: 160px;
+  left: 0px;
+  z-index: 5;
+  width: 319px;
+  height: 200px;
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  background-image: url("images/mound.png");
+  background-position: 0px 10px;
+  background-repeat: no-repeat;
+}
+
+/*地鼠群*/
+#gopher {
+  position: absolute;
+  top: 150px;
+  left: 0px;
+  width: 319px;
+  height: 100px;
+  overflow: hidden;
+}
+
+/*地鼠一般性設定*/
+.gophers {
+  z-index: 3;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 49px;
+  height: 49px;
+  display: block;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  -webkit-animation-iteration-count: infinite;
+  cursor: pointer;
+  opacity: 0.9;
+  border: none;
+  outline: none;
+}
+
+/*地鼠個性化圖示*/
+.gophers#gopher1, .gophers#gopher7, .gophers#gopher8, .gophers#gopher9,
+.gophers#gopher10 {
+  background-image: url("images/gopher1.png");
+}
+
+.gophers#gopher2 {
+  background-image: url("images/gopher2.png");
+}
+
+.gophers#gopher3 {
+  background-image: url("images/gopher3.png");
+}
+
+.gophers#gopher4 {
+  background-image: url("images/gopher4.png");
+}
+
+.gophers#gopher5 {
+  background-image: url("images/gopher5.png");
+}
+
+.gophers#gopher6 {
+  background-image: url("images/gopher6.png");
+}
+
+/*地鼠出生位置*/
+.gophers#gopher1, .gophers#gopher6 {
+  top: -93px;
+  left: 12px;
+}
+
+.gophers#gopher2, .gophers#gopher7 {
+  top: -93px;
+  left: 74px;
+}
+
+.gophers#gopher3, .gophers#gopher8 {
+  top: -93px;
+  left: 135px;
+}
+
+.gophers#gopher4, .gophers#gopher9 {
+  top: -93px;
+  left: 196px;
+}
+
+.gophers#gopher5, .gophers#gopher10 {
+  top: -93px;
+  left: 258px;
+}
+
+.gophers:hover {
+  opacity: 1;
+}
+
+/*動畫：地鼠AI*/
+@-webkit-keyframes gopher1 {
+  0% {-webkit-transform: translateY(200px);}
+  40% {-webkit-transform: translateY(145px);}
+  50% {-webkit-transform: translateY(200px);}
+  90% {-webkit-transform: translateY(200px);}
+  100% {-webkit-transform: translateY(200px);}
+}
+
+#gopher1 {
+  -webkit-animation-name: gopher1;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-delay: 0s;
+}
+
+@-webkit-keyframes gopher2_6 {
+  0% {-webkit-transform: translateY(200px);}
+  40% {-webkit-transform: translateY(200px);}
+  50% {-webkit-transform: translateY(145px);}
+  90% {-webkit-transform: translateY(145px);}
+  100% {-webkit-transform: translateY(200px);}
+}
+
+#gopher2 {
+  -webkit-animation-name: gopher2_6;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-delay: 1s;
+}
+
+#gopher6 {
+  -webkit-animation-name: gopher2_6;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-delay: 0s;
+}
+
+@-webkit-keyframes gopher3 {
+  0% {-webkit-transform: translateY(200px);}
+  40% {-webkit-transform: translateY(200px);}
+  50% {-webkit-transform: translateY(145px);}
+  60% {-webkit-transform: translateY(145px);}
+  90% {-webkit-transform: translateY(200px);}
+  100% {-webkit-transform: translateY(200px);}
+}
+
+#gopher3 {
+  -webkit-animation-name: gopher3;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-delay: 2s;
+}
+
+@-webkit-keyframes gopher4 {
+  0% {-webkit-transform: translateY(200px);}
+  30% {-webkit-transform: translateY(160px);}
+  50% {-webkit-transform: translateY(145px);}
+  60% {-webkit-transform: translateY(200px);}
+  90% {-webkit-transform: translateY(200px);}
+  100% {-webkit-transform: translateY(200px);}
+}
+
+#gopher4 {
+  -webkit-animation-name: gopher4;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-delay: 1s;
+}
+
+@-webkit-keyframes gopher5 {
+  0% {-webkit-transform: translateY(200px);}
+  30% {-webkit-transform: translateY(200px);}
+  60% {-webkit-transform: translateY(145px);}
+  100% {-webkit-transform: translateY(200px);}
+}
+
+#gopher5 {
+  -webkit-animation-name: gopher5;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-delay: 2s;
+}
+
+@-webkit-keyframes gopher7 {
+  0% {-webkit-transform: translateY(200px);}
+  20% {-webkit-transform: translateY(145px);}
+  30% {-webkit-transform: translateY(200px);}
+  40% {-webkit-transform: translateY(145px);}
+  45% {-webkit-transform: translateY(200px);}
+  50% {-webkit-transform: translateY(200px);}
+  90% {-webkit-transform: translateY(200px);}
+  100% {-webkit-transform: translateY(200px);}
+}
+
+#gopher7 {
+  -webkit-animation-name: gopher7;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-delay: 1s;
+}
+
+@-webkit-keyframes gopher8 {
+  0% {-webkit-transform: translateY(200px);}
+  10% {-webkit-transform: translateY(145px);}
+  15% {-webkit-transform: translateY(200px);}
+  20% {-webkit-transform: translateY(145px);}
+  25% {-webkit-transform: translateY(200px);}
+  30% {-webkit-transform: translateY(145px);}
+  40% {-webkit-transform: translateY(200px);}
+  50% {-webkit-transform: translateY(200px);}
+  70% {-webkit-transform: translateY(200px);}
+  90% {-webkit-transform: translateY(145px);}
+  100% {-webkit-transform: translateY(200px);}
+}
+
+#gopher8 {
+  -webkit-animation-name: gopher8;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-delay: 2s;
+}
+
+@-webkit-keyframes gopher9 {
+  0% {-webkit-transform: translateY(200px);}
+  20% {-webkit-transform: translateY(200px);}
+  30% {-webkit-transform: translateY(200px);}
+  60% {-webkit-transform: translateY(200px);}
+  70% {-webkit-transform: translateY(145px);}
+  75% {-webkit-transform: translateY(160px);}
+  80% {-webkit-transform: translateY(145px);}
+  85% {-webkit-transform: translateY(160px);}
+  90% {-webkit-transform: translateY(145px);}
+  100% {-webkit-transform: translateY(200px);}
+}
+
+#gopher9 {
+  -webkit-animation-name: gopher9;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-delay: 1s;
+}
+
+@-webkit-keyframes gopher10 {
+  0% {-webkit-transform: translateY(200px);}
+  5% {-webkit-transform: translateY(145px);}
+  30% {-webkit-transform: translateY(200px);}
+  60% {-webkit-transform: translateY(200px);}
+  90% {-webkit-transform: translateY(200px);}
+  100% {-webkit-transform: translateY(200px);}
+}
+
+#gopher10 {
+  -webkit-animation-name: gopher10;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-delay: 1s;
+}
+
+/*地鼠擊中特效*/
+.effect {
+  background-image: url("images/boom.png");
+  position: absolute;
+  z-index: 21;
+  width: 106px;
+  height: 98px;
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+.gophers:checked + .effect {
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-driection: normal;
+}
+
+/*安排地鼠擊中特效出現的位置*/
+#gopher1 + .effect, #gopher6 + .effec {
+  top: 0px;
+  left: 0px;
+}
+#gopher2 + .effect, #gopher7 + .effec {
+  top: 0px;
+  left: 50px;
+}
+#gopher3 + .effect, #gopher8 + .effec {
+  top: 0px;
+  left: 105px;
+}
+#gopher4 + .effect, #gopher9 + .effec {
+  top: 0px;
+  left: 164px;
+}
+#gopher5 + .effect, #gopher10 + .effec {
+  top: 0px;
+  left: 214px;
+}
+
+/*兩種地鼠擊中特效*/
+@-webkit-keyframes effect1 {
+  0% {-webkit-transform: translateX(0px) translate(0px); opacity: 0;}
+  30% {-webkit-transform: translateX(-10px) translate(-10px); opacity: 1;}
+  80% {-webkit-transform: translateX(-10px) translate(-10px); opacity: 1;}
+  100% {-webkit-transform: translateX(0px) translate(0px); opacity: 0;}
+}
+
+@-webkit-keyframes effect2 {
+  0% {-webkit-transform: translateX(0px) translate(0px); opacity: 0;}
+  30% {-webkit-transform: translateX(10px) translate(-10px); opacity: 1;}
+  80% {-webkit-transform: translateX(10px) translate(-10px); opacity: 1;}
+  100% {-webkit-transform: translateX(0px) translate(0px); opacity: 0;}
+}
+
+#gopher1:checked + .effect, #gopher2:checked + .effect,
+#gopher3:checked + .effect, #gopher4:checked + .effect,
+#gopher5:checked + .effect {
+  -webkit-animation-name: effect1;
+}
+
+#gopher6:checked + .effect, #gopher7:checked + .effect,
+#gopher8:checked + .effect, #gopher9:checked + .effect,
+#gopher10:checked + .effect {
+  -webkit-animation-name: effect2;
+}
+
+/*地鼠被擊中後就不會再出現*/
+.gophers:checked {
+  opacity: 0;
+  -webkit-animation-name; none;
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/*計分板外框*/
+#score_board {
+  background-image: url("images/scoreboard.png");
+  position: absolute;
+  top: 85px;
+  left: 85px;
+  width: 157px;
+  height: 105px;
+  z-index: 10;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+}
+
+/*分數顯示區域*/
+#score_display {
+  position: absolute;
+  top: 23px;
+  left: 25px;
+  width: 111px;
+  height: 63.5px;
+  overflow: hidden;
+}
+
+/*分數紙帶初始位置*/
+#score {
+  position: absolute;
+  top: -640px;
+  left: 0px;
+  width: 111px;
+  height: 694px;
+}
+
+/*分數紙帶*/
+#score11 {
+  background-image: url("images/scores11.png");
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 111px;
+  height: 694px;
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/*紀錄地鼠擊中數，並且即時計算得分*/
+.score {
+  position: relative;
+  display: block;
+  width: 111px;
+  height: 63.5px;
+  background-color: transparent;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  -webkit-transition: 0.1s linear;
+}
+
+/*擊中地鼠就捲動分數紙帶*/
+.score:checked {
+  position: absolute;
+  top: 0px;
+  height: 0px;
+}
